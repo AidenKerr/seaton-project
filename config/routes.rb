@@ -1,12 +1,19 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  devise_scope :user do
+    delete 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+  end
   # You can have the root of your site routed with "root"
- 
+
   root 'home#index'
-  
-  
+
+  resources :teachers, only: [:index]
+  resources :events, only: [:index]
+  resources :forum, only: [:index]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -55,9 +62,9 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  
-  
-  
-  
-  
+
+
+
+
+
 end

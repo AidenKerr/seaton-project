@@ -1,1 +1,32 @@
-<header></header>
+
+
+<!--<div id="showcase">-->
+<!--    This is where images and events will be showcased-->
+<!--</div>-->
+
+<!--<div class="center">-->
+
+<!--    <%= link_to 'events' do %>-->
+<!--        <div class="display-block event-home inline-block" id="events">-->
+<!--            Events-->
+<!--        </div>-->
+<!--    <% end %>-->
+
+<!--    <%= link_to 'teachers' do %>-->
+<!--        <div class="display-block inline-block" id="teachers">-->
+<!--            Teachers-->
+<!--        </div>-->
+<!--    <% end %>-->
+
+<!--    <%= link_to 'forum' do %>-->
+<!--        <div class="display-block inline-block" id="forum">-->
+<!--            Forum-->
+<!--        </div>-->
+<!--    <% end %>-->
+<!--</div>-->
+
+<% if user_signed_in? %>
+    You are signed in as <%= current_user.email %> | <%= link_to 'sign out',destroy_user_session_path, {method: :delete} %>
+<% else %>
+    <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
+<% end %>
