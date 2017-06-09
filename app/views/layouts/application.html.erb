@@ -6,19 +6,38 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
-  <header>
-    <a href="/" <h1 class="title"><h1>Seaton Student Website</h1> </a>
-    <img class="communist-flag" src="/images/UCSP.png">
-  </header>
-
-<%= yield %>
+  <body>
 
 
 
-</body>
+    <header>
+      <a href="/" <h1 class="title"><h1>Seaton Student Website</h1> </a>
+
+      <img class="communist-flag" src="/images/UCSP.png">
+
+      <% if user_signed_in?%>
+        <%= current_user.email %> logged in | <%= link_to 'sign out',destroy_user_session_path, {method: :delete} %>
+      <% else %>
+        <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
+      <% end %>
+    </header>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <%= yield %>
+
+
+
+
+
+
+    <footer>
+      <h3>Credit 2 team page</h3>
+
+    </footer>
+
+
+
+  </body>
 </html>

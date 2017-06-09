@@ -1,34 +1,30 @@
 
+<div class="main">
+  <div id="showcase">
+    This is where images and events will be showcased
+  </div>
 
-<!--<div id="showcase">-->
-<!--    This is where images and events will be showcased-->
-<!--</div>-->
+  <div class="center">
 
-<!--<div class="center">-->
+    <%= link_to 'events' do %>
+      <div class="launcher">
+        Events
+      </div>
+    <% end %>
 
-<!--    <%= link_to 'events' do %>-->
-<!--        <div class="display-block event-home inline-block" id="events">-->
-<!--            Events-->
-<!--        </div>-->
-<!--    <% end %>-->
+    <%= link_to 'teachers' do %>
+      <div class="launcher">
+        Teachers
+      </div>
+    <% end %>
 
-<!--    <%= link_to 'teachers' do %>-->
-<!--        <div class="display-block inline-block" id="teachers">-->
-<!--            Teachers-->
-<!--        </div>-->
-<!--    <% end %>-->
+    <%= link_to 'posts' do %>
+      <div class="launcher">
+        Forum
+      </div>
+    <% end %>
+  </div>
 
-<!--    <%= link_to 'forum' do %>-->
-<!--        <div class="display-block inline-block" id="forum">-->
-<!--            Forum-->
-<!--        </div>-->
-<!--    <% end %>-->
-<!--</div>-->
+</div>
 
-<% if user_signed_in?%>
-    <%= current_user.email %> logged in | <%= link_to 'sign out',destroy_user_session_path, {method: :delete} %>
-  <% else %>
-    <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
-
-<% end %>
 
