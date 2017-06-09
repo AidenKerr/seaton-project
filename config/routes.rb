@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :teachers, only: [:index]
   resources :events, only: [:index]
-  resources :forum, only: [:index]
+  resources :posts, only: [:index, :new, :create]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

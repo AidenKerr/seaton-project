@@ -3,7 +3,11 @@
 Devise.setup do |config|
 
   config.omniauth :google_oauth2, Rails.application.secrets.google_client_id, Rails.application.secrets.google_client_secret, {
-    scope: 'email, profile'
+
+    scope: 'email, profile',
+    prompt: "select_account"
+
+
 
   }
   # The secret key used by Devise. Devise uses this key to generate
