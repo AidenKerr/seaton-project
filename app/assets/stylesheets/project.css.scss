@@ -1,38 +1,42 @@
 
-$primary-color: #689f38;
-$launcher-background-color: #8bc34a;
-$credit-footer-color: #8bc34a;
-$body-color: #c8e6c9;
-$showcase-color: #BDBDBD;
-
-
-
+$primary: #81c784;
+$primary-light: #b2fab4;
+$primary-dark: #519657;
+$secondary: #4dd0e1;
+$secondary-light: #88ffff;
+$secondary-dark: #009faf;
 
 header {
-    background-color: $primary-color;
-    overflow: hidden;
-    display: flex;
-    align-items: baseline;
+    background-color: $primary-dark;
+    display: inline-block;
     margin: 0;
 }
 
 .title {
     color: black;
-    text-decoration: none
+    text-decoration: none;
+    display: inline-block;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+html, body {
+    height: 100%;
+    flex-direction: column;
 }
 
 body {
     margin: 0;
-    background-color: $body-color;
-
+    background-color: $primary;
+    display: flex;
 }
 
 footer {
-    background-color: $credit-footer-color;
+    background-color: $primary-light;
     margin: 0;
-    display: flex;
-    position: absolute;
-    bottom: 0px;
+    bottom: 0;
     width: 100%;
 }
 
@@ -41,7 +45,7 @@ a {
 }
 
 #showcase {
-    background-color: $showcase-color;
+    background-color: $secondary-dark;
     height: 100px;
     margin: auto;
 }
@@ -52,29 +56,39 @@ a {
 }
 
 .gradient {
-    background: linear-gradient(to bottom, #29216c 1%, #ffffff 100%);
+    background: linear-gradient(to bottom, $primary-dark 1%, #ffffff 100%);
 }
 
 .communist-flag {
     height: 50px;
     width: auto;
-    display: block;
+    display: inline-block;
     margin: auto auto auto 20px;
-
 }
 
 .launcher {
     width: 100px;
     height: 100px;
     margin: 10px;
-    background-color: $launcher-background-color;
+    background-color: $secondary-light;
     color: black;
     text-decoration: none;
     border-radius: 10px;
 }
 
 
-.center {
+.buttons {
     display: flex;
     justify-content: center;
+}
+
+#posts {
+    display: block;
+    width: 500px;
+    margin: 0 auto;
+}
+
+.post {
+    background-color: $secondary-dark;
+    overflow-wrap: break-word;
 }

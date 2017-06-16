@@ -1,6 +1,10 @@
 <%= link_to "New Post", "posts/new" %> </br>
 
-<% for post in @posts %>
-    <%= post.user.email %>:
-    <%= post.text %> </br>
-<% end %>
+<div id="posts">
+  <% for post in @posts %>
+    <div class="post">
+      <div><%= post.user.email %></div>
+      <div><%= post.text %></div>
+    </div></br>
+  <% end %>
+</div>
