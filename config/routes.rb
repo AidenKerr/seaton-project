@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :teachers, only: [:index]
   resources :events, only: [:index]
   resources :posts, only: [:index, :new, :create]
+  resources :users, only: [:index, :edit, :update]
+  #get 'users/:id' => 'users#profile'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

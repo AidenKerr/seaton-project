@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
   has_many :posts, dependent: :destroy
+  validates :username, uniqueness: {case_sensitive: false}
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

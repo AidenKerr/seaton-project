@@ -3,8 +3,10 @@
 <div id="posts">
   <% for post in @posts %>
     <div class="post">
-      <div><%= post.user.email %></div>
+      <div><%= username(post.user) %></div>
+
       <div><%= post.text %></div>
     </div></br>
+
   <% end %>
 </div>

@@ -4,11 +4,10 @@
     <title>Workspace</title>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <%= csrf_meta_tags %>
   </head>
   <body>
-
-
 
     <header>
       <a href="/" <h1 class="title"><h1>Seaton Student Website</h1> </a>
@@ -16,9 +15,9 @@
       <img class="communist-flag" src="/images/UCSP.png">
 
       <% if user_signed_in?%>
-        <%= current_user.email %> logged in | <%= link_to 'sign out',destroy_user_session_path, {method: :delete} %>
+        <div class="sign-in"><%= username(current_user) %> | <%= link_to "edit", "/users/#{current_user.id}/edit" %> | <%= link_to 'sign out',destroy_user_session_path, {method: :delete} %></div>
       <% else %>
-        <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
+        <div class="sign-in"><%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %></div>
       <% end %>
     </header>
 
@@ -28,13 +27,16 @@
     <% if alert %>
       <p class="alert"><%= alert %></p>
     <% end %>
+    <% if flash[:error] %>
+      <p class="error"><%= flash[:error] %></p>
+    <% end %>
 
     <div class="content">
       <%= yield %>
     </div>
 
     <footer>
-      <h3>Credit to team</h3>
+      <h4>Made by the Seaton Programming Club | 2017</h4>
     </footer>
 
 

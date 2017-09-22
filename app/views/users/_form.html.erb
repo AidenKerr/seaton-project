@@ -1,0 +1,14 @@
+
+<%= form_for @profile do |f| %>
+  <p>
+    <b>Current username:</b> <%= @profile.username %> <br>
+    <br>
+    <%= f.label :username %> <br>
+
+
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
